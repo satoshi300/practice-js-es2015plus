@@ -1,16 +1,21 @@
 import { files } from './data.js';
 
 const toBytes = ({ length = 0, unit = 'B' }) => {
-    if (unit === 'KB') {
+    if (unit === 'B') {
+        return length;
+    }
+    else if (unit === 'KB') {
         return length * 1024;
     }
-    if (unit === 'MB') {
+    else if (unit === 'MB') {
         return length * 1024 * 1024;
     }
-    if (unit === 'GB') {
+    else if (unit === 'GB') {
         return length * 1024 * 1024 * 1024;
+    } else {
+        alert('Nie mam takiej jednostki w bazie danych i obliczenie nie bedzie proawoidlowe!')
     }
-    return length;
+
     //   switch (unit) {
     //     case 'KB': return length * 1024;
     //     case 'MB': return length * 1024 * 1024;
